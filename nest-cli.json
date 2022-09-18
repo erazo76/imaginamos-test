@@ -14,7 +14,8 @@
       "entryFile": "main",
       "sourceRoot": "apps/imaginamos-test/src",
       "compilerOptions": {
-        "tsConfigPath": "apps/imaginamos-test/tsconfig.app.json"
+        "tsConfigPath": "apps/imaginamos-test/tsconfig.app.json",
+        "plugins": ["@nestjs/swagger"]
       }
     },
     "tv-serv": {
