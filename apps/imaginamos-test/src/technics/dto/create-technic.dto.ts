@@ -1,0 +1,9 @@
+import { IsNotEmpty, Length, Matches } from "class-validator";
+
+export class CreateTechnicDto {
+
+    @IsNotEmpty()    
+    @Length(2,50)
+    @Matches(/^(\b[A-Z][a-zñáéíóú]+['\-]{0,1}[a-zñáéíóú]+)(\s+(\b[A-Z][a-zñáéíóú]+['\-]{0,1}[a-zñáéíóú]+))*$/, {message: 'Invalid name'}) 
+    name: string; 
+}

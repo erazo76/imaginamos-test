@@ -1,0 +1,30 @@
+{
+  "collection": "@nestjs/schematics",
+  "sourceRoot": "apps/imaginamos-test/src",
+  "monorepo": true,
+  "root": "apps/imaginamos-test",
+  "compilerOptions": {
+    "webpack": true,
+    "tsConfigPath": "apps/imaginamos-test/tsconfig.app.json"
+  },
+  "projects": {
+    "imaginamos-test": {
+      "type": "application",
+      "root": "apps/imaginamos-test",
+      "entryFile": "main",
+      "sourceRoot": "apps/imaginamos-test/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/imaginamos-test/tsconfig.app.json"
+      }
+    },
+    "tv-serv": {
+      "type": "application",
+      "root": "apps/tv-serv",
+      "entryFile": "main",
+      "sourceRoot": "apps/tv-serv/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/tv-serv/tsconfig.app.json"
+      }
+    }
+  }
+}
