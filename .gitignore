@@ -35,6 +35,3 @@ lerna-debug.log*
 !.vscode/extensions.json
 
 /postgres_data
-.env
-.prd.env
-.stg.env
