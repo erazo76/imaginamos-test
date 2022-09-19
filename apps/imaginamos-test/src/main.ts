@@ -17,6 +17,14 @@ async function bootstrap() {
     const document = SwaggerModule.createDocument(app, config);
     SwaggerModule.setup('docs', app, document);
 
+    app.enableCors({
+      origin: '*',
+      methods: 'GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS',
+      allowedHeaders:
+        'X-API-KEY, Origin, X-Requested-With, Content-Type, Accept, Access-Control-Request-Method, Authorization',
+      credentials: true,
+    });
+    
     const server = await app.listen(PORT, async () => {
       Logger .log(`Imaginamos-api Server is running in port ${PORT}`);     
     });    
