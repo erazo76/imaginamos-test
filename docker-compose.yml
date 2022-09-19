@@ -18,5 +18,24 @@ services:
       - PGADMIN_DEFAULT_EMAIL=root@admin.com
       - PGADMIN_DEFAULT_PASSWORD=root
     ports:
-      - "5050:80"  
- 
+      - "5050:80" 
+
+#  imaginamos:
+#    image: imaginamos:local
+#    container_name: imaginamos
+#    build:
+#      context: .
+#      dockerfile: Dockerfile.imaginamos-test
+#    ports:
+#      - 3000:3000
+#    volumes:
+#      - .:/app
+
+#  tv-serv:
+#    image: tv-serv:local
+#    container_name: tv-serv
+#    build:
+#      context: .
+#      dockerfile: Dockerfile.tv-serv
+#    volumes:
+#      - .:/app */     

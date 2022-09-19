@@ -23,7 +23,11 @@
     "migrations:generate": "npm run typeorm -- migration:generate -n",
     "migrations:run": "npm run typeorm -- migration:run",
     "migrations:show": "npm run typeorm -- migration:show",
-    "migrations:drop": "npm run typeorm -- migration:drop"
+    "migrations:drop": "npm run typeorm -- migration:drop",
+    "build:imaginamos-test": "nest build imaginamos-test",
+    "build:tv-serv": "nest build tv-serv",
+    "start:imaginamos-test": "nest start imaginamos-test --watch",
+    "start:tv-serv": "nest start tv-serv --watch"
   },
   "dependencies": {
     "@nestjs/common": "^8.0.0",
@@ -41,7 +45,8 @@
     "rimraf": "^3.0.2",
     "rxjs": "^7.2.0",
     "typeorm": "^0.2.45",
-    "uuid": "^9.0.0"
+    "uuid": "^9.0.0",
+    "webpack": "^5.74.0"
   },
   "devDependencies": {
     "@nestjs/cli": "^8.0.0",
