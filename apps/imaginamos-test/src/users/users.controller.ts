@@ -2,12 +2,15 @@ import { Controller, Get, Post, Body, Res, HttpStatus } from '@nestjs/common';
 import { UsersService } from './users.service';
 import { CreateUserDto } from './dto/create-user.dto';
 import { Response } from 'express';
+import { ApiOperation, ApiTags } from '@nestjs/swagger';
 
+@ApiTags('Users')
 @Controller('users')
 export class UsersController {
   constructor(private readonly usersService: UsersService) {}
 
   @Post()
+  @ApiOperation({summary:'Register a user by full name'})
   async create(@Res() res:Response, @Body() createUserDto: CreateUserDto): Promise<any> {
     let user = await this.usersService.create(createUserDto);
     if(!user){
@@ -18,6 +21,7 @@ export class UsersController {
   } 
 
   @Get()
+  @ApiOperation({summary:'Obtain user list'})
   async findAll(@Res() res:Response):Promise<any> {
     let users = await this.usersService.findAll();    
     if(users.length === 0){

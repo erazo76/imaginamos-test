@@ -2,12 +2,15 @@ import { Controller, Get, Post, Body, Res, HttpStatus } from '@nestjs/common';
 import { TechnicsService } from './technics.service';
 import { CreateTechnicDto } from './dto/create-technic.dto';
 import { Response } from 'express';
+import { ApiOperation, ApiTags } from '@nestjs/swagger';
 
+@ApiTags('Technics')
 @Controller('technics')
 export class TechnicsController {
   constructor(private readonly technicsService: TechnicsService) {}
 
   @Post()
+  @ApiOperation({summary:'Register a technic by full name'})
   async create(@Res() res:Response, @Body() createTechnicDto: CreateTechnicDto): Promise<any> {
     let technic = await this.technicsService.create(createTechnicDto);
     if(!technic){
@@ -18,6 +21,7 @@ export class TechnicsController {
   } 
 
   @Get()
+  @ApiOperation({summary:'Obtain technic list'})
   async findAll(@Res() res:Response):Promise<any> {
     let technics = await this.technicsService.findAll();    
     if(technics.length === 0){
